@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e876153f53007e34eb6cb5dab34f1ced, type: 3}
+  m_Name: TheBeginningSO
+  m_EditorClassIdentifier: Assembly-CSharp::TheBeginningSO
+  floorTile: {fileID: 3708705521568332958, guid: 867a12f09b0da9845ac0d8fddc00e044, type: 3}
+  floorSize: 5
+  tileSize: 2.5
+  archway: {fileID: 853447998454553398, guid: e4732fe763df9784e953d1dc73546d46, type: 3}
