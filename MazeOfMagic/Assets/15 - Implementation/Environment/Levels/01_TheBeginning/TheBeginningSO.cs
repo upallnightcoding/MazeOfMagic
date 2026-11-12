@@ -10,4 +10,6 @@ public class TheBeginningSO : ScriptableObject
     public float tileSize;
 
     public GameObject archway;
+
+    public GameObject[] directionRunes;
 }
