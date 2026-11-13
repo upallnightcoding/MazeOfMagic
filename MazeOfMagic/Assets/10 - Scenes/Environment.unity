@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 1889150406}
   - component: {fileID: 1889150407}
   - component: {fileID: 1889150408}
+  - component: {fileID: 1889150409}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -435,12 +436,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889150404}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a75eb47108d9b14c93da7226d1d2a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MazeOfMagic.TheBeginning
   script: {fileID: 11400000, guid: c2c9210687bd8c243a04e97f65b1fde0, type: 2}
+--- !u!114 &1889150409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889150404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fdd8559a2d6b64fbb35a1244c9164e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MazeCntrl
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
