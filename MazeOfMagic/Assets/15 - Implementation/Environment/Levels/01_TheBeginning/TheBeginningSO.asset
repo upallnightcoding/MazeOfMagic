@@ -16,3 +16,8 @@ MonoBehaviour:
   floorSize: 5
   tileSize: 2.5
   archway: {fileID: 853447998454553398, guid: e4732fe763df9784e953d1dc73546d46, type: 3}
+  directionRunes:
+  - {fileID: 102200, guid: daaae00e85b960e41ad98de75ef9b6de, type: 3}
+  - {fileID: 147756, guid: b914f597dc60ac94ead6d334b15d6622, type: 3}
+  - {fileID: 123956, guid: 54dabe5d3db0f8141bfc1e5a978ee094, type: 3}
+  - {fileID: 135490, guid: 20835ebfc4c46754b87029a07c3887a8, type: 3}

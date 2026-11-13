@@ -1,3 +1,4 @@
+using MazeOfMagic;
 using UnityEngine;
 
 public class TheBeginningBase
@@ -36,10 +37,16 @@ public class TheBeginningBase
 
     private void RenderArchway(GameObject parent, TheBeginningSO script, float x, float z, float rotate) 
     {
+        Vector3 position = new Vector3(x, 0.0f, z);
         GameObject archway = Object.Instantiate(script.archway, parent.transform);
-
-        archway.transform.localPosition = new Vector3(x, 0.0f, z);
+        archway.transform.localPosition = position;
         archway.transform.localRotation = Quaternion.Euler(0.0f, rotate, 0.0f);
+
+        GameObject mark = Object.Instantiate(script.directionRunes[0], parent.transform);
+        mark.transform.localPosition = new Vector3(position.x, position.y + 0.5f, position.z);
+        mark.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        
+        archway.GetComponent<ArchwayCntrl>().SetMarker(mark);
     }
 
     protected void DrawPlatform(GameObject parent, TheBeginningSO script)

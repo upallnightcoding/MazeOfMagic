@@ -4,30 +4,38 @@ using UnityEngine;
 
 public class MazeCell 
 {
-    // Type of Cell
-    public MazeCellType Type    { get; private set; } = MazeCellType.UNVISITED;
-
     // References to north, south, east and west walls of a cell
-    public MazeCell NorthWall   { get; private set; } = null;
-    public MazeCell SouthWall   { get; private set; } = null;
-    public MazeCell EastWall    { get; private set; } = null;
-    public MazeCell WestWall    { get; private set; } = null;
+    private MazeCell northWall  = null;
+    private MazeCell southWall  = null;
+    private MazeCell eastWall   = null;
+    private MazeCell westWall   = null;
 
     // Cell Column and Row position
-    public int Col              { get; private set; }
-    public int Row              { get; private set; }
+    public int Col  { get; private set; }
+    public int Row  { get; private set; }
 
-    //public Vector3 Position     { get; set; }
+    public void MarkAsVisited() => status = MazeCellStatus.VISITED; 
 
-    public void MarkAsVisited() => Type = MazeCellType.VISITED; 
+    public bool HasNotBeenVisited()   => (status == MazeCellStatus.UNVISITED); 
 
-    public bool HasNotBeenVisited()   => (Type == MazeCellType.UNVISITED); 
+    // Predicate functions that returns true if a wall exists
+    //=======================================================
+    public bool HasNorthWall()  => northWall == null; 
+    public bool HasSouthWall()  => southWall == null; 
+    public bool HasEastWall()   => eastWall == null; 
+    public bool HasWestWall()   => westWall == null; 
 
-    // Predicate functions that returns true if a call exists
-    public bool HasNorthWall()  => NorthWall == null; 
-    public bool HasSouthWall()  => SouthWall == null; 
-    public bool HasEastWall()   => EastWall == null; 
-    public bool HasWestWall()   => WestWall == null; 
+    // Defines this cell as the starting cell
+    // ======================================
+    public void MarkPathAsStarting() => path = MazeCellPath.START;
+    public void MarkAsPath() => path = MazeCellPath.PATH;
+    public void MarkPathAsEnding() => path = MazeCellPath.END;
+
+    public MazeCellPath GetMazePath() => path;
+
+    private MazeCellPath path = MazeCellPath.NONE;
+
+    private MazeCellStatus status = MazeCellStatus.UNVISITED;
 
     public MazeCell(int col, int row) 
     {
@@ -45,11 +53,11 @@ public class MazeCell
         {
             if (row == 1) 
             {
-                NorthWall = neighbor;
-                neighbor.SouthWall = this;
+                northWall = neighbor;
+                neighbor.southWall = this;
             } else {
-                SouthWall = neighbor;
-                neighbor.NorthWall = this;
+                southWall = neighbor;
+                neighbor.northWall = this;
             }
         }
 
@@ -58,19 +66,32 @@ public class MazeCell
         {
             if (col == 1) 
             {
-                EastWall = neighbor;
-                neighbor.WestWall = this;
+                eastWall = neighbor;
+                neighbor.westWall = this;
             } else {
-                WestWall = neighbor;
-                neighbor.EastWall = this;
+                westWall = neighbor;
+                neighbor.eastWall = this;
             }
         }
     }
 }
 
-public enum MazeCellType
+/* 
+MazeCellStatus - Lets the maze generation algorithm know the processing status
+of the cell as the logic is creating the maze path.  Note: The SPACE 
+enumeration is used to designate an area of the maze as predefined.
+ */
+public enum MazeCellStatus
 {
     UNVISITED,
     VISITED,
     SPACE
+}
+
+public enum MazeCellPath
+{
+    START,
+    END,
+    PATH,
+    NONE
 }
