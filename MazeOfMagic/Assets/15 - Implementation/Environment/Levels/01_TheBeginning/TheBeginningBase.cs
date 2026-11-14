@@ -3,50 +3,51 @@ using UnityEngine;
 
 public class TheBeginningBase
 {
-    protected void DrawArchway(GameObject parent, TheBeginningSO script, int whichArchway)
+    protected void DrawArchway(GameObject parent, TheBeginningSO script, MazeCellPathDir whichArchway)
     {
         float x = 0.0f, z = 0.0f;
         float rotate = 0.0f;
 
         switch(whichArchway)
         {
-            case 8: 
+            case MazeCellPathDir.NORTH: 
                 x = 0.0f;
                 z = System.MathF.Floor(script.floorSize / 2.0f) * script.tileSize + (script.tileSize / 2.5f);
                 rotate = 180.0f;
                 break;
-            case 4: 
+            case MazeCellPathDir.SOUTH: 
                 x = 0.0f;
                 z = -(System.MathF.Floor(script.floorSize / 2.0f) * script.tileSize + (script.tileSize / 2.5f));
                 rotate = 0.0f;
                 break; 
-            case 2: 
+            case MazeCellPathDir.EAST: 
                 x = System.MathF.Floor(script.floorSize / 2.0f) * script.tileSize + (script.tileSize / 2.5f);
                 z = 0.0f;
                 rotate = -90.0f;
                 break; 
-            case 1: 
+            case MazeCellPathDir.WEST: 
                 x = -(System.MathF.Floor(script.floorSize / 2.0f) * script.tileSize + (script.tileSize / 2.5f));
                 z = 0.0f;
                 rotate = 90.0f;
                 break;
         }
 
-        RenderArchway(parent, script, x, z, rotate);
+        RenderArchway(parent, script, x, z, rotate, whichArchway);
     }
 
-    private void RenderArchway(GameObject parent, TheBeginningSO script, float x, float z, float rotate) 
+    private void RenderArchway(
+        GameObject parent, 
+        TheBeginningSO script, 
+        float x, float z, 
+        float rotate, 
+        MazeCellPathDir whichArchway
+    ) 
     {
         Vector3 position = new Vector3(x, 0.0f, z);
         GameObject archway = Object.Instantiate(script.archway, parent.transform);
         archway.transform.localPosition = position;
         archway.transform.localRotation = Quaternion.Euler(0.0f, rotate, 0.0f);
-
-        GameObject mark = Object.Instantiate(script.directionRunes[0], parent.transform);
-        mark.transform.localPosition = new Vector3(position.x, position.y + 0.5f, position.z);
-        mark.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        
-        archway.GetComponent<ArchwayCntrl>().SetMarker(mark);
+        archway.GetComponent<ArchwayCntrl>().SetMarker(script.mazePathMarker, script.runes[0]);
     }
 
     protected void DrawPlatform(GameObject parent, TheBeginningSO script)
@@ -71,10 +72,5 @@ public class TheBeginningBase
 
             x += script.tileSize;
         }
-    
-        //float centerX = -(script.floorSize * script.tileSize) / 2.0f;
-        //float centerY = -(script.floorSize * script.tileSize) / 2.0f;
-        //parent.transform.position = new Vector3(centerX, 0.0f, centerY);
     }
-
 }

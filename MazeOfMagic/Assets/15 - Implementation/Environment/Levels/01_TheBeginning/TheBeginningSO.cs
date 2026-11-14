@@ -11,5 +11,7 @@ public class TheBeginningSO : ScriptableObject
 
     public GameObject archway;
 
-    public GameObject[] directionRunes;
+    public GameObject mazePathMarker;
+
+    public GameObject[] runes;
 }

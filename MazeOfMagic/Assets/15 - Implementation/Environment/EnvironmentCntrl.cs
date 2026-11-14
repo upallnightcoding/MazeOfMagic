@@ -10,7 +10,6 @@ namespace MazeOfMagic
         void Start()
         {
             world = GetComponent<TheBeginning>();
-
         }
 
         // Update is called once per frame
@@ -19,4 +18,6 @@ namespace MazeOfMagic
 
         }
     }
+
+    
 }

@@ -13,4 +13,14 @@ public class PlayerCntrl : MonoBehaviour
     {
         
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log("Character hit: " + hit.gameObject.name);
+
+        if (hit.gameObject.CompareTag("Obstacle"))
+        {
+            // Run collision logic here
+        }
+    }
 }

@@ -16,6 +16,8 @@ namespace MazeOfMagic
         private Stack<MazeCell> mazeStack;
         private Stack<MazeCell> pathStack;
 
+        private MazeCell startingCell = null;
+
         public MazeGenerator(int width, int height)
         {
             this.Width = width;
@@ -38,7 +40,7 @@ namespace MazeOfMagic
 
             SetMazePath();
 
-            return (new MazeObject(maze, Width, Height));
+            return (new MazeObject(maze, Width, Height, startingCell));
         }
 
         private void WalkMaze(MazeCell neighbor)
@@ -65,6 +67,7 @@ namespace MazeOfMagic
                 if (count == 0)
                 {
                     cell.MarkPathAsStarting();
+                    startingCell = cell;
                 } else if (count == (size - 1))
                 {
                     cell.MarkPathAsEnding();
@@ -139,7 +142,6 @@ namespace MazeOfMagic
 
             SetStartingCell();
         }
-
 
         private void BuildMaze()
         {
