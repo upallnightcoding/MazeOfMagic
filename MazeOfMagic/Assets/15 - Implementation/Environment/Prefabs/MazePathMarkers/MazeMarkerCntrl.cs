@@ -1,46 +1,51 @@
 using UnityEngine;
-using MazeOfMagic;
 using System.Collections;
+using System.IO;
 
-public class MazeMarkerCntrl : MonoBehaviour
+namespace MazeOfMagic
 {
-    private float markerRotationSpeed = 40.0f;
 
-    private GameObject marker = null;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class MazeMarkerCntrl : MonoBehaviour
     {
-        
-    }
+        private float markerRotationSpeed = 40.0f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        private GameObject marker = null;
+        private MazeCellPathDir pathDir = MazeCellPathDir.NONE;
 
-    public void SetMazeMarker(GameObject rune)
-    {
-        marker = Object.Instantiate(rune, gameObject.transform);
-        marker.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-        marker.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-
-        StartCoroutine(SpinContinuously());
-    }
-
-    private IEnumerator SpinContinuously()
-    {
-        while (true)
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
         {
-            marker.transform.Rotate(Vector3.up * markerRotationSpeed * Time.deltaTime);
-            yield return null;
+
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("On Trigger Enter Archway ...");
-    }
+        public void SetMazeMarker(MazeCellPathDir pathDir, GameObject rune)
+        {
+            marker = Object.Instantiate(rune, gameObject.transform);
+            marker.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            marker.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
+            this.pathDir = pathDir;
+
+            StartCoroutine(SpinContinuously());
+        }
+
+        private IEnumerator SpinContinuously()
+        {
+            while (true)
+            {
+                marker.transform.Rotate(markerRotationSpeed * Time.deltaTime * Vector3.up);
+                yield return null;
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log("Player: " + other.gameObject.CompareTag("Player"));
+
+            other.gameObject.GetComponent<PlayerCntrl>().SetPosition(new Vector3(0.0f, 0.0f, 0.0f));
+
+            EventManager.Instance.InvokeOnMarkMazePath(pathDir);
+        }
+
+    }
 }

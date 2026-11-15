@@ -13,29 +13,25 @@ namespace MazeOfMagic
         private MazeGenerator mazeGenerator = null;
         private MazeObject maze = null;
 
+        private MazeCell currentMazeCell = null;
+
+        private GameObject currentDisplay = null;
+
         void Start()
         {
             mazeGenerator = new MazeGenerator(10, 10);
             maze = mazeGenerator.GenerateMaze();            
-            MazeCell startingCell = maze.GetStartingCell();
+            currentMazeCell = maze.GetStartingCell();
 
             world = new TheBeginning_World(gameObject, script);
-            world.Render(startingCell);
+            currentDisplay = world.Render(currentMazeCell);
         }
 
-        public virtual int GetPlatformType()
+        public void MoveToNextMazeCell(MazeCellPathDir pathDir)
         {
-            return(-1);
-        }
-
-        public void Render()
-        {
-            
-        }
-
-        public virtual void RotatePlatform()
-        {
-            
+            currentDisplay.SetActive(false);
+            currentMazeCell = currentMazeCell.GetNextCell(pathDir);
+            currentDisplay = world.Render(currentMazeCell);
         }
 
         public void OnDrawGizmos()

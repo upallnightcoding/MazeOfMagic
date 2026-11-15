@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 6184911256660873862}
   - component: {fileID: 1450798576413906270}
   - component: {fileID: 8509992503672776592}
+  - component: {fileID: 8304962657269377502}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +114,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.06, z: 0}
+  m_Center: {x: 0, y: 1.21, z: 0}
 --- !u!114 &1450798576413906270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +161,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8304962657269377502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99707763540425717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863100b09d6a9b541a2b493e87bcca27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCntrl
 --- !u!1001 &5777094158051389122
 PrefabInstance:
   m_ObjectHideFlags: 0

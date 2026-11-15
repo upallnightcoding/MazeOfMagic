@@ -14,13 +14,18 @@ public class PlayerCntrl : MonoBehaviour
         
     }
 
+    public void SetPosition(Vector3 position)
+    {
+        gameObject.transform.position = position;
+    }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log("Character hit: " + hit.gameObject.name);
+        //Debug.Log("Character hit: " + hit.gameObject.name);
 
-        if (hit.gameObject.CompareTag("Obstacle"))
-        {
+        //if (hit.gameObject.CompareTag("Player"))
+        //{
             // Run collision logic here
-        }
+        //}
     }
 }

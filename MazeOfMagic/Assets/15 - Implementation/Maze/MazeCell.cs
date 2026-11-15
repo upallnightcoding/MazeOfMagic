@@ -45,6 +45,29 @@ namespace MazeOfMagic
             this.Row = row;
         }
 
+        public MazeCell GetNextCell(MazeCellPathDir pathDir)
+        {
+            MazeCell nextMazeCell = null;
+
+            switch(pathDir)
+            {
+                case MazeCellPathDir.NORTH:
+                nextMazeCell = northWall;
+                break;
+                case MazeCellPathDir.SOUTH:
+                nextMazeCell = southWall;
+                break;
+                case MazeCellPathDir.EAST:
+                nextMazeCell = eastWall;
+                break;
+                case MazeCellPathDir.WEST:
+                nextMazeCell = westWall;
+                break;
+            }
+
+            return(nextMazeCell);
+        }
+
         public void CollapseWall(MazeCell neighbor)
         {
             int col = neighbor.Col - Col;

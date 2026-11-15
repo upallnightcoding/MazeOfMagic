@@ -312,6 +312,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c309e3725f707e848ae84edb0dc0d131, type: 3}
+--- !u!1 &827472380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 99707763540425717, guid: c309e3725f707e848ae84edb0dc0d131, type: 3}
+  m_PrefabInstance: {fileID: 652929922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ef453e32457ba4294f05d44fbd9b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentCntrl
+  player: {fileID: 827472380}
 --- !u!114 &1889150408
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,11 +18,11 @@ namespace MazeOfMagic
 
         }
 
-        public void SetMarker(GameObject markerPrefab, GameObject rune)
+        public void SetMarker(GameObject markerPrefab, MazeCellPathDir pathDir, GameObject rune)
         {
             GameObject marker = Object.Instantiate(markerPrefab, gameObject.transform);
             marker.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            marker.GetComponent<MazeMarkerCntrl>().SetMazeMarker(rune);
+            marker.GetComponent<MazeMarkerCntrl>().SetMazeMarker(pathDir, rune);
         }
     }
 }
