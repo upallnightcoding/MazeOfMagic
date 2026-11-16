@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa865bf51381f4458e0ad6c9c75101c, type: 3}
+  m_Name: TheForgottenCryptsSO
+  m_EditorClassIdentifier: Assembly-CSharp::TheForgottenCryptsSO
+  platformsPrefabs:
+  - {fileID: 1420882207856965062, guid: 3814593593897d04a986f4c0123bbe74, type: 3}
+  - {fileID: 714978994474147688, guid: dc9634a3108eb554a8277fa0e8c2ceee, type: 3}
+  - {fileID: 532618406342408030, guid: 83f66584aeea6b24580eaaece2ed56c1, type: 3}
+  - {fileID: 3988943312888093076, guid: 5c2bb1425bb376346a2eada0fec3e7a5, type: 3}
+  - {fileID: 3114143277550102637, guid: 042823c068925434abac074be980d9d6, type: 3}

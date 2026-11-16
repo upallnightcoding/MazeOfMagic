@@ -45,6 +45,18 @@ namespace MazeOfMagic
             this.Row = row;
         }
 
+        public int CalculateMazePathCode()
+        {
+            int code = 0;
+
+            if (!HasNorthWall()) code += (int)MazeCellPathDir.NORTH;
+            if (!HasSouthWall()) code += (int)MazeCellPathDir.SOUTH;
+            if (!HasEastWall()) code += (int)MazeCellPathDir.EAST;
+            if (!HasWestWall()) code += (int)MazeCellPathDir.WEST;
+
+            return(code);
+        }
+
         public MazeCell GetNextCell(MazeCellPathDir pathDir)
         {
             MazeCell nextMazeCell = null;

@@ -6,19 +6,15 @@ namespace MazeOfMagic
     public class EnvironmentCntrl : MonoBehaviour
     {
         [SerializeField] private GameObject player;
+        [SerializeField] private EnvironmentSO script;
 
-        private TheBeginning world;
+        //private TheBeginning world;
+        private TheForgottenCrypts world;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            world = GetComponent<TheBeginning>();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            world = GetComponent<TheForgottenCrypts>();
         }
 
         private void MakeTransition(MazeCellPathDir pathDir)
@@ -27,7 +23,7 @@ namespace MazeOfMagic
 
             //player.GetComponent<PlayerCntrl>().SetPosition(new Vector3(0.0f, 0.0f, 0.0f));
 
-            world.MoveToNextMazeCell(pathDir);
+            //world.MoveToNextMazeCell(pathDir);
         }
 
         private void OnEnable()
