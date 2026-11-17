@@ -1,15 +1,11 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MazeOfMagic
 {
-    public class World : Stage
+    public interface World
     {
-        private Dictionary<int, Platform> platformMap;
+        public void InitializeWorld(int width, int height);
 
-        public World()
-        {
-            platformMap = new Dictionary<int, Platform>();
-        }
+        public void MakeTransition(MazeCellPathDir pathDir);
     }
 }

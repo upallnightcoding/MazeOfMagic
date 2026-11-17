@@ -1,14 +1,12 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MazeOfMagic
 {
-    public class TheBeginning : MonoBehaviour
+    public class TheFirstGates : MonoBehaviour, World
     {
         [SerializeField] private TheBeginningSO script;
 
-        private TheBeginning_World world = null;
+        private TheFirstGates_World world = null;
 
         private MazeGenerator mazeGenerator = null;
         private MazeObject maze = null;
@@ -17,14 +15,25 @@ namespace MazeOfMagic
 
         private GameObject currentDisplay = null;
 
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             mazeGenerator = new MazeGenerator(10, 10);
             maze = mazeGenerator.GenerateMaze();            
             currentMazeCell = maze.GetStartingCell();
 
-            world = new TheBeginning_World(gameObject, script);
+            world = new TheFirstGates_World(gameObject, script);
             currentDisplay = world.Render(currentMazeCell);
+        }
+
+        public void InitializeWorld(int width, int height)
+        {
+            
+        }
+
+        public void MakeTransition(MazeCellPathDir pathDir)
+        {
+            
         }
 
         public void MoveToNextMazeCell(MazeCellPathDir pathDir)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MazeOfMagic
 {
-    public class TheForgottenCrypts_World
+    public class TheForgottenCrypts_World 
     {
         private TheForgottenCryptsSO script = null;
 

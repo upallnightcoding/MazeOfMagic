@@ -487,9 +487,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1889150406}
   - component: {fileID: 1889150407}
-  - component: {fileID: 1889150408}
   - component: {fileID: 1889150409}
   - component: {fileID: 1889150410}
+  - component: {fileID: 1889150411}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -526,19 +526,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentCntrl
   player: {fileID: 827472380}
   script: {fileID: 11400000, guid: 949b93f572f37524c924fce4f6cddf15, type: 2}
---- !u!114 &1889150408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889150404}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a75eb47108d9b14c93da7226d1d2a68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MazeOfMagic.TheBeginning
-  script: {fileID: 11400000, guid: c2c9210687bd8c243a04e97f65b1fde0, type: 2}
 --- !u!114 &1889150409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,12 +545,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889150404}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 586a9173cd6ddd5429bc740685a70966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MazeOfMagic.TheForgottenCrypts
   script: {fileID: 11400000, guid: 0c90aa04c3ee5e946913a5c5b90bae3d, type: 2}
+--- !u!114 &1889150411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889150404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f7a903beb4987449ae745d02770192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MazeOfMagic.TheFirstGates
+  script: {fileID: 11400000, guid: c2c9210687bd8c243a04e97f65b1fde0, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

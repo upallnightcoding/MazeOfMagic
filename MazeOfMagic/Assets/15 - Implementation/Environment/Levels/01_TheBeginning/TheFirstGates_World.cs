@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace MazeOfMagic
 {
-    public class TheBeginning_World
+    public class TheFirstGates_World
     {
         private TheBeginningSO script;
         private GameObject environment;
 
-        public TheBeginning_World(GameObject environment, TheBeginningSO script)
+        public TheFirstGates_World(GameObject environment, TheBeginningSO script)
         {
             this.script = script;
             this.environment = environment;
@@ -16,7 +16,7 @@ namespace MazeOfMagic
 
         public GameObject Render(MazeCell cell)
         {
-            GameObject parent = new GameObject("TheBeginning");
+            GameObject parent = new GameObject("TheFirstGates");
             parent.transform.SetParent(environment.transform);
 
             DrawPlatform(parent, script);

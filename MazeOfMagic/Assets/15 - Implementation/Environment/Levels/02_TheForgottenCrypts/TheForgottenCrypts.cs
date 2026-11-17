@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MazeOfMagic
 {
-    public class TheForgottenCrypts : MonoBehaviour
+    public class TheForgottenCrypts : MonoBehaviour, World
     {
         [SerializeField] private TheForgottenCryptsSO script;
 
@@ -24,6 +24,16 @@ namespace MazeOfMagic
 
             world = new TheForgottenCrypts_World(gameObject, script);
             currentDisplay = world.Render(currentMazeCell);
+        }
+
+        public void InitializeWorld(int width, int height)
+        {
+            
+        }
+
+        public void MakeTransition(MazeCellPathDir pathDir)
+        {
+            
         }
 
         public void OnDrawGizmos()
@@ -81,5 +91,6 @@ namespace MazeOfMagic
             }
         }
 
+       
     }
 }
