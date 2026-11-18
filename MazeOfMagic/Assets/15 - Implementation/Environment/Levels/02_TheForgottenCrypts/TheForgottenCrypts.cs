@@ -18,6 +18,10 @@ namespace MazeOfMagic
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+        }
+
+        public void InitializeWorld(int width, int height)
+        {
             mazeGenerator = new MazeGenerator(10, 10);
             maze = mazeGenerator.GenerateMaze();
             currentMazeCell = maze.GetStartingCell();
@@ -26,14 +30,11 @@ namespace MazeOfMagic
             currentDisplay = world.Render(currentMazeCell);
         }
 
-        public void InitializeWorld(int width, int height)
-        {
-            
-        }
-
         public void MakeTransition(MazeCellPathDir pathDir)
         {
-            
+            currentDisplay.SetActive(false);
+            currentMazeCell = currentMazeCell.GetNextCell(pathDir);
+            currentDisplay = world.Render(currentMazeCell);
         }
 
         public void OnDrawGizmos()

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda6753bbe785c641a7bf334fdf4e42f, type: 3}
+  m_Name: TheFirstGatesSO
+  m_EditorClassIdentifier: Assembly-CSharp::TheFirstGatesSO
+  floorTile: {fileID: 3708705521568332958, guid: 867a12f09b0da9845ac0d8fddc00e044, type: 3}
+  floorSize: 5
+  tileSize: 2.5
+  archway: {fileID: 853447998454553398, guid: e4732fe763df9784e953d1dc73546d46, type: 3}
+  mazePathMarker: {fileID: 2390438464279120504, guid: c8835580fd98a304da05c5c98336ae83, type: 3}
+  runes:
+  - {fileID: 3972415509605128417, guid: 4691b82c1fc15ee40b4c9249ed40fd4d, type: 3}
+  - {fileID: 5637691942797967601, guid: f832abd60dc055546833267b96a2361b, type: 3}
+  - {fileID: 2153363448390856760, guid: db3dc1313541fcf4f9416d8c12e4e20c, type: 3}
+  - {fileID: 825127535151886889, guid: 1ff4addadf3d28b46b326fa1371079c5, type: 3}

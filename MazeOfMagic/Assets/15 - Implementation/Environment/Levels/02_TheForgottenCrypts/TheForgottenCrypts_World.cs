@@ -39,8 +39,6 @@ namespace MazeOfMagic
             GameObject platform = UnityEngine.Object.Instantiate(script.platformsPrefabs[rootAndRotate.root], parent.transform);
             platform.transform.localRotation = Quaternion.Euler(0.0f, rootAndRotate.rotate * 90.0f, 0.0f);
 
-            //script.platformsPrefabs[rootAndRotate.root].transform.rotation = Quaternion.Euler(0.0f, rootAndRotate.rotate * 90.0f, 0.0f);
-
             return parent;
         }
 

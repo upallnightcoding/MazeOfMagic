@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f7a903beb4987449ae745d02770192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MazeOfMagic.TheFirstGates
-  script: {fileID: 11400000, guid: c2c9210687bd8c243a04e97f65b1fde0, type: 2}
+  script: {fileID: 11400000, guid: c05d3abf9358492408162450fab3831b, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
